@@ -1,0 +1,18 @@
+<template>
+	<div class="main_container">
+        <div>
+            <p>Top画面</p>
+		</div>
+        <div>
+			<RouterLink to ='/SelectCardTop'>
+				<p>次の札を入力する</p>
+			</RouterLink>
+		</div>
+	</div>
+</template>
+
+<script>
+export default {
+  name: 'SelectTagTop'
+}
+</script>
