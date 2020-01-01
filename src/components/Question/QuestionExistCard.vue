@@ -6,8 +6,8 @@
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/QuestionWhichTake'>
+		<div @click=setEmptyCard>
+			<RouterLink to = '/QuestionExistOtetsuki'>
 				<p>空札？</p>
 			</RouterLink>
 		</div>
@@ -16,6 +16,11 @@
 </template>
 <script>
 export default {
-  name: 'QuestionExistCard'
+  name: 'QuestionExistCard',
+  methods: {
+    setEmptyCard () {
+      this.$store.dispatch('updateTakeCard', {take_card: 'なし'})
+    }
+  }
 }
 </script>

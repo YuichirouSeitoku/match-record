@@ -9,8 +9,8 @@
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/TopMenu'>
+		<div @click="updateOtetsukiUser('なし')">
+			<RouterLink to = '/'>
 				<p>いいえ</p>
 			</RouterLink>
 		</div>
@@ -19,6 +19,11 @@
 </template>
 <script>
 export default {
-  name: 'QuestionExistOtetsuki'
+  name: 'QuestionExistOtetsuki',
+  methods: {
+    updateOtetsukiUser (value) {
+      this.$store.dispatch('updateOtetsukiUser', {otetsuki_user: value})
+    }
+  }
 }
 </script>

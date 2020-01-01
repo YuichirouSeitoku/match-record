@@ -1,43 +1,43 @@
 <template>
 	<div class="main_container">
-		<div>
+		<div @click="updateCurrentCard('む')">
 			<RouterLink to ='/QuestionExistCard'>
 				<p>む</p>
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/SelectTwoCharacter'>
+		<div @click="updateCurrentCard('す')">
+			<RouterLink to = '/QuestionExistCard'>
 				<p>す</p>
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/SelectThreeCharacter'>
+		<div @click="updateCurrentCard('め')">
+			<RouterLink to = '/QuestionExistCard'>
 				<p>め</p>
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/SelectFourCharacter'>
+		<div @click="updateCurrentCard('ふ')">
+			<RouterLink to = '/QuestionExistCard'>
 				<p>ふ</p>
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/SelectFiveSixCharacter'>
+		<div @click="updateCurrentCard('さ')">
+			<RouterLink to = '/QuestionExistCard'>
 				<p>さ</p>
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/SelectSevenCharacter'>
+		<div @click="updateCurrentCard('ほ')">
+			<RouterLink to = '/QuestionExistCard'>
 				<p>ほ</p>
 			</RouterLink>
 		</div>
 
-		<div>
-			<RouterLink to = '/SelectEightCharacter'>
+		<div @click="updateCurrentCard('せ')">
+			<RouterLink to = '/QuestionExistCard'>
 				<p>せ</p>
 			</RouterLink>
 		</div>
@@ -45,6 +45,11 @@
 </template>
 <script>
 export default {
-  name: 'SelectOneCharacter'
+  name: 'SelectOneCharacter',
+  methods: {
+    updateCurrentCard (value) {
+      this.$store.dispatch('updateCurrentCard', {current_card: value})
+    }
+  }
 }
 </script>
