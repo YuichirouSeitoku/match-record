@@ -19,7 +19,7 @@ export default {
   name: 'QuestionExistCard',
   methods: {
     setEmptyCard () {
-      this.$store.dispatch('updateTakeCard', {take_card: 'なし'})
+      this.$store.dispatch('updateTakeCard', {take_card: '空札'})
     }
   }
 }
