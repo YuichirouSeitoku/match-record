@@ -22,8 +22,8 @@ export default {
       datasets: [{
         data: [this.$store.state.player_offense_count, this.$store.state.player_defense_count],
         backgroundColor: [
-          "#FF6384",
-          "#36A2EB"
+          '#FF6384',
+          '#36A2EB'
         ]
       }]
     })
