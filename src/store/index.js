@@ -11,6 +11,8 @@ const state = {
   player_take: [],
   player_otetsuki: [],
   player_remaining_count: 25,
+  player_offense_count: 0,
+  player_defense_count: 0,
   opponent_take: [],
   opponent_otetsuki: [],
   opponent_remaining_count: 25
@@ -28,6 +30,12 @@ const mutations = {
   },
   setOtetsukiUser (state, payload) {
     state.otetsuki_user.push(payload.otetsuki_user)
+  },
+  setPlayerOffenseCount (state) {
+    state.player_offense_count = state.player_offense_count + 1
+  },
+  setPlayerDefenseCount (state) {
+    state.player_defense_count = state.player_defense_count + 1
   }
 }
 
@@ -43,6 +51,12 @@ const actions = {
   },
   updateOtetsukiUser ({ commit }, payload) {
     commit('setOtetsukiUser', payload)
+  },
+  updatePlayerOffenseCount ({ commit }) {
+    commit('setPlayerOffenseCount')
+  },
+  updatePlayerDefenseCount ({ commit }) {
+    commit('setPlayerDefenseCount')
   }
 }
 
