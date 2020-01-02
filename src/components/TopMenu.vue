@@ -9,11 +9,19 @@
 			</RouterLink>
 		</div>
         <div>
-            <p>テスト画面</p>
-            <p>all_card[0]{{ all_card[0] }}</p>
-            <p>card_index_count{{ card_index_count }}</p>
-            <p>take_card{{ take_card }}</p>
-            <p>otetsuki_user{{ otetsuki_user }}</p>
+            <div @click="test">
+                <p>再描画します</p>
+            </div>
+        </div>
+        <div>
+            <p>tableを表示します</p>
+            <table>
+                <tr v-for="index in card_indexes" :key='index'>
+                    <td>{{ index }}</td>
+                    <td>{{ take_card[index-1] }}</td>
+                    <td>{{ otetsuki_user[index-1] }}</td>
+                </tr>
+            </table>
         </div>
 	</div>
 </template>
@@ -22,6 +30,16 @@
 import { mapState } from 'vuex'
 export default {
   name: 'TopMenu',
+  data () {
+    return {
+      card_indexes: [],
+      table_list: [],
+      i: 0
+    }
+  },
+  mounted () {
+    this.card_indexes = this.$store.state.card_index_count
+  },
   computed: {
     ...mapState(['all_card']),
     ...mapState(['card_index_count']),
@@ -31,6 +49,18 @@ export default {
   methods: {
     CountCardIndex () {
       this.$store.dispatch('updateCardIndex')
+    },
+    test () {
+      // eslint-disable-next-line no-unused-expressions
+      this.forceUpdate
+      console.log(`再描画しました`)
+    },
+    addTableList: function (num) {
+      this.table_list.push({
+        index: this.$store.state.all_card[num] + 1,
+        take: this.$store.state.take_card[num],
+        otetsuki: this.$store.state.otetsuki_user[num]
+      })
     }
   }
 }
