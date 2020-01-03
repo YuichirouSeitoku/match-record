@@ -5,6 +5,7 @@ import SelectCardTop from '../components/SelectCard/SelectCardTop'
 import SelectOneCharacter from '../components/SelectCard/SelectOneCharacter'
 import QuestionExistCard from '../components/Question/QuestionExistCard'
 import QuestionWhichTake from '../components/Question/QuestionWhichTake'
+import QuestionOffenseOrDefense from '../components/Question/QuestionOffenseOrDefense'
 import QuestionExistOtetsuki from '../components/Question/QuestionExistOtetsuki'
 import QuestionOtetsukiDetail from '../components/Question/QuestionOtetsukiDetail'
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/QuestionWhichTake',
       name: 'QuestionWhichTake',
       component: QuestionWhichTake
+    },
+    {
+      path: '/QuestionOffenseOrDefense',
+      name: 'QuestionOffenseOrDefense',
+      component: QuestionOffenseOrDefense
     },
     {
       path: '/QuestionExistOtetsuki',

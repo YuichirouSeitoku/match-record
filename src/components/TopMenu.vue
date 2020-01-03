@@ -8,9 +8,15 @@
 				<p>次の札を入力する</p>
 			</RouterLink>
 		</div>
+        <DoughnutChart></DoughnutChart>
         <div>
             <div @click="test">
                 <p>再描画します</p>
+            </div>
+            <div>
+                <p>'攻めた回数と守った回数'</p>
+                <p>{{ player_offense_count }}</p>
+                <p>{{ player_defense_count }}</p>
             </div>
         </div>
         <div>
@@ -18,6 +24,7 @@
             <table>
                 <tr v-for="index in card_indexes" :key='index'>
                     <td>{{ index }}</td>
+                    <td>{{ all_card[index-1] }}</td>
                     <td>{{ take_card[index-1] }}</td>
                     <td>{{ otetsuki_user[index-1] }}</td>
                 </tr>
@@ -28,8 +35,12 @@
 
 <script>
 import { mapState } from 'vuex'
+import DoughnutChart from './DoughnutChart'
 export default {
   name: 'TopMenu',
+  components: {
+    DoughnutChart
+  },
   data () {
     return {
       card_indexes: [],
@@ -44,7 +55,9 @@ export default {
     ...mapState(['all_card']),
     ...mapState(['card_index_count']),
     ...mapState(['take_card']),
-    ...mapState(['otetsuki_user'])
+    ...mapState(['otetsuki_user']),
+    ...mapState(['player_offense_count']),
+    ...mapState(['player_defense_count'])
   },
   methods: {
     CountCardIndex () {

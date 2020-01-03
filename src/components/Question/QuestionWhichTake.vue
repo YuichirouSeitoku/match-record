@@ -4,7 +4,7 @@
             <p>とったのは？</p>
         </div>
 		<div @click="setTakeCard('自分')">
-			<RouterLink to ='/QuestionExistOtetsuki'>
+			<RouterLink to ='/QuestionOffenseOrDefense'>
 				<p>自分</p>
 			</RouterLink>
 		</div>
