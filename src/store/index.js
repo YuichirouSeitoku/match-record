@@ -8,6 +8,8 @@ const state = {
   card_index_count: 0,
   take_card: [],
   otetsuki_user: [],
+  card_difference: [0],
+  take_flag: false,
   player_take: [],
   player_otetsuki: [],
   player_remaining_count: 25,
@@ -31,6 +33,15 @@ const mutations = {
   setOtetsukiUser (state, payload) {
     state.otetsuki_user.push(payload.otetsuki_user)
   },
+  setCardDifference (state, payload) {
+    state.card_difference.push(payload.card_difference)
+  },
+  setTakeFlagTrue (state) {
+    state.take_flag = true
+  },
+  setTakeFlagFalse (state) {
+    state.take_flag = false
+  },
   setPlayerOffenseCount (state) {
     state.player_offense_count = state.player_offense_count + 1
   },
@@ -51,6 +62,15 @@ const actions = {
   },
   updateOtetsukiUser ({ commit }, payload) {
     commit('setOtetsukiUser', payload)
+  },
+  updateCardDifference ({ commit }, payload) {
+    commit('setCardDifference', payload)
+  },
+  updateTakeFlagTrue ({ commit }) {
+    commit('setTakeFlagTrue')
+  },
+  updateTakeFlagFalse ({ commit }) {
+    commit('setTakeFlagFalse')
   },
   updatePlayerOffenseCount ({ commit }) {
     commit('setPlayerOffenseCount')
