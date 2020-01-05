@@ -22,7 +22,7 @@ export default {
       this.$store.dispatch('updatePlayerOffenseCount')
     },
     countPlayerDefense () {
-      this.Sstore.dispatch('updatePlayerDefenseCount')
+      this.$store.dispatch('updatePlayerDefenseCount')
     }
   }
 }
