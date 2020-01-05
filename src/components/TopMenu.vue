@@ -8,17 +8,6 @@
 				<p>次の札を入力する</p>
 			</RouterLink>
 		</div>
-        <DoughnutChart></DoughnutChart>
-        <div>
-            <div @click="test">
-                <p>再描画します</p>
-            </div>
-            <div>
-                <p>'攻めた回数と守った回数'</p>
-                <p>{{ player_offense_count }}</p>
-                <p>{{ player_defense_count }}</p>
-            </div>
-        </div>
         <div>
             <p>tableを表示します</p>
             <table>
@@ -62,11 +51,6 @@ export default {
   methods: {
     CountCardIndex () {
       this.$store.dispatch('updateCardIndex')
-    },
-    test () {
-      // eslint-disable-next-line no-unused-expressions
-      this.forceUpdate
-      console.log(`再描画しました`)
     },
     addTableList: function (num) {
       this.table_list.push({

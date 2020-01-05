@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import TopMenu from '@/components/TopMenu'
+import ShowChart from '@/components/ShowChart'
 import SelectCardTop from '../components/SelectCard/SelectCardTop'
 import SelectOneCharacter from '../components/SelectCard/SelectOneCharacter'
 import QuestionExistCard from '../components/Question/QuestionExistCard'
@@ -17,6 +18,11 @@ export default new Router({
       path: '/',
       name: 'TopMenu',
       component: TopMenu
+    },
+    {
+      path: '/ShowChart',
+      name: 'ShowChart',
+      component: ShowChart
     },
     {
       path: '/SelectCardTop',
