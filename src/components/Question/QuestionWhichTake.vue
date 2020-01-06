@@ -1,21 +1,26 @@
 <template>
-	<div class="main_container">
+    <div>
         <div>
             <p>とったのは？</p>
         </div>
-		<div @click="setTakeCard('自分')">
-			<RouterLink to ='/QuestionOffenseOrDefense'>
-				<p>自分</p>
-			</RouterLink>
-		</div>
+        <div class="columns">
+            <div @click="setTakeCard('自分')" class="column">
+                <RouterLink to ='/QuestionOffenseOrDefense'>
+                    <div class="box">
+                        <p>自分</p>
+                    </div>
+                </RouterLink>
+            </div>
 
-		<div @click="setTakeCard('相手')">
-			<RouterLink to = '/QuestionExistOtetsuki'>
-				<p>相手</p>
-			</RouterLink>
-		</div>
-
-	</div>
+            <div @click="setTakeCard('相手')" class="column">
+                <RouterLink to = '/QuestionExistOtetsuki'>
+                    <div class="box">
+                        <p>相手</p>
+                    </div>
+                </RouterLink>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 export default {

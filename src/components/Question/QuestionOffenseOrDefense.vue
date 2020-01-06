@@ -1,18 +1,22 @@
 <template>
-	<div class="main_container">
-		<div @click="countPlayerOffense">
-			<RouterLink to ='/QuestionExistOtetsuki'>
-				<p>攻めてとった？</p>
-			</RouterLink>
-		</div>
+    <div class="columns">
+        <div @click="countPlayerOffense" class="column">
+            <RouterLink to ='/QuestionExistOtetsuki'>
+                <div class="box">
+                    <p>攻めてとった？</p>
+                </div>
+            </RouterLink>
+        </div>
 
-		<div @click="countPlayerDefense">
-			<RouterLink to = '/QuestionExistOtetsuki'>
-				<p>守ってとった？</p>
-			</RouterLink>
-		</div>
+        <div @click="countPlayerDefense" class="column">
+            <RouterLink to = '/QuestionExistOtetsuki'>
+                <div class="box">
+                    <p>守ってとった？</p>
+                </div>
+            </RouterLink>
+        </div>
 
-	</div>
+    </div>
 </template>
 <script>
 export default {
