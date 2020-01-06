@@ -1,57 +1,53 @@
 <template>
     <div class="columns">
-        <div class="column" @click="updateCurrentCard('む')">
+        <div class="column" @click="updateCurrentCard('わがい')">
             <RouterLink to ='/QuestionExistCard'>
                 <div class="box">
-                    <p>む</p>
+                    <p>わがい</p>
                 </div>
             </RouterLink>
         </div>
 
-        <div class="column" @click="updateCurrentCard('す')">
+        <div class="column" @click="updateCurrentCard('わがそ')">
             <RouterLink to = '/QuestionExistCard'>
                 <div class="box">
-                    <p>す</p>
+                    <p>わがそ</p>
                 </div>
             </RouterLink>
         </div>
 
-        <div class="column" @click="updateCurrentCard('め')">
+        <div class="column" @click="updateCurrentCard('わたのはらこ')">
             <RouterLink to = '/QuestionExistCard'>
                 <div class="box">
-                    <p>め</p>
+                    <p>わたのはらこ</p>
                 </div>
             </RouterLink>
         </div>
-
-        <div class="column" @click="updateCurrentCard('ふ')">
+        <div class="column" @click="updateCurrentCard('わたのはらや')">
             <RouterLink to = '/QuestionExistCard'>
                 <div class="box">
-                    <p>ふ</p>
+                    <p>わたのはらや</p>
                 </div>
             </RouterLink>
         </div>
-
-        <div class="column" @click="updateCurrentCard('さ')">
+        <div class="column" @click="updateCurrentCard('わすら')">
             <RouterLink to = '/QuestionExistCard'>
                 <div class="box">
-                    <p>さ</p>
+                    <p>わすら</p>
                 </div>
             </RouterLink>
         </div>
-
-        <div class="column" @click="updateCurrentCard('ほ')">
+        <div class="column" @click="updateCurrentCard('わすれ')">
             <RouterLink to = '/QuestionExistCard'>
                 <div class="box">
-                    <p>ほ</p>
+                    <p>わすれ</p>
                 </div>
             </RouterLink>
         </div>
-
-        <div class="column" @click="updateCurrentCard('せ')">
+        <div class="column" @click="updateCurrentCard('わび')">
             <RouterLink to = '/QuestionExistCard'>
                 <div class="box">
-                    <p>せ</p>
+                    <p>わび</p>
                 </div>
             </RouterLink>
         </div>
@@ -59,7 +55,7 @@
 </template>
 <script>
 export default {
-  name: 'SelectOneCharacter',
+  name: 'SelectSevenCharacterWa',
   methods: {
     updateCurrentCard (value) {
       this.$store.dispatch('updateCurrentCard', {current_card: value})

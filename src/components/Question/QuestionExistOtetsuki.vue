@@ -1,21 +1,28 @@
 <template>
-	<div class="main_container">
+    <div>
         <div>
             <p>自分 or 相手がお手つきをした？</p>
         </div>
-		<div>
-			<RouterLink to ='/QuestionOtetsukiDetail'>
-				<p>はい</p>
-			</RouterLink>
-		</div>
+        <div class="columns">
+            <div class="column">
+                <RouterLink to ='/QuestionOtetsukiDetail'>
+                    <div class="box">
+                        <p>はい</p>
+                    </div>
+                </RouterLink>
+            </div>
 
-		<div @click="updateOtetsukiUser('なし')">
-			<RouterLink to = '/'>
-				<p>いいえ</p>
-			</RouterLink>
-		</div>
-
-	</div>
+            <div class="column">
+                <div @click="updateOtetsukiUser('なし')">
+                    <RouterLink to = '/'>
+                        <div class="box">
+                            <p>いいえ</p>
+                        </div>
+                    </RouterLink>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 export default {
