@@ -3,7 +3,7 @@
     <div class="main-height">
       <router-view/>
     </div>
-    <div>
+    <div class="footer">
       <Footer/>
     </div>
   </div>
@@ -21,15 +21,15 @@ export default {
 
 <style>
 html {
-  height: 100vh;
+  min-height: 100vh;
 }
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 #app {
-  height: 100%;
+  min-height: 100%;
 }
-.main-height {
-  height: 90%;
+.footer {
+  margin-top: auto;
 }
 </style>
