@@ -28,9 +28,12 @@ export default {
   },
   methods: {
     runMethods (id, name) {
-      if (id === 22) {
+      if (id === 22 && typeof name !== 'undefined') {
         this.$store.dispatch('updateCurrentCard', { current_card: name })
-      } else if ((name === '空札') || (name === '自分') || (name === '相手')) {
+      } else {
+        this.$router.push({name: 'InputData', params: { id }})
+      }
+      if ((name === '空札') || (name === '自分') || (name === '相手')) {
         this.$store.dispatch('updateTakeCard', { take_card: name })
       } else if ((name === '攻めて取った')) {
         this.$store.dispatch('updatePlayerOffenseCount')
