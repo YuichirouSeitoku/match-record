@@ -4,7 +4,7 @@
             <p>Top画面</p>
 		</div>
         <div @click="CountCardIndex" class="box">
-			<RouterLink to ='/SelectCardTop'>
+			<RouterLink to ='/InputData/0'>
 				<p>次の札を入力する</p>
 			</RouterLink>
 		</div>
