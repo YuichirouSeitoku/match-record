@@ -6,17 +6,19 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "node server.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
   "dependencies": {
     "buefy": "^0.8.9",
     "chart.js": "^2.9.3",
+    "express": "^4.17.1",
     "vue": "^2.5.2",
     "vue-chartjs": "^3.5.0",
     "vue-router": "^3.0.1",
-    "vuex": "^3.1.2"
+    "vuex": "^3.1.2",
+    "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -62,7 +64,7 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.9.1",
+    "webpack-dev-server": "^2.11.5",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
