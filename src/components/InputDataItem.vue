@@ -2,7 +2,7 @@
     <div class="columns">
         <div class="column">
             <div class="box" v-on:click="emitParent">
-                <p>{{ card }}</p>
+                <p class="has-text-weight-medium has-text-centered">{{ card }}</p>
             </div>
         </div>
     </div>

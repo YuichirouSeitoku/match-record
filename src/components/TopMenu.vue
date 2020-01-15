@@ -1,14 +1,11 @@
 <template>
-	<div class="main_container">
-        <div>
-            <p>Top画面</p>
-		</div>
+	<div>
         <div @click="CountCardIndex" class="box">
 			<RouterLink to ='/InputData/0'>
-				<p>次の札を入力する</p>
+				<p class="has-text-weight-medium has-text-centered">次の札を入力する</p>
 			</RouterLink>
 		</div>
-        <div>
+        <div class="box">
             <b-table :data="table_data" :columns="table_columns" :mobile-cards="false"></b-table>
         </div>
 	</div>

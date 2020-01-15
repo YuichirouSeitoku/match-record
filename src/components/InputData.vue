@@ -1,5 +1,5 @@
 <template>
-    <div class="box">
+    <div>
         <div v-for="(card, index) in card_list[$route.params.id]" :key="index">
             <input-data-item :card='card.name' :id='card.next_id' v-on:fromChildValue="runMethods" ></input-data-item>
         </div>

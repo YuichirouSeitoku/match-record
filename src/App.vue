@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-    <div class="main-height">
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Karuta Record
+          </h1>
+        </div>
+      </div>
+    </section>
+    <section class="section main-contents has-background-white-ter">
       <router-view/>
-    </div>
-    <div class="footer">
+    </section>
+    <section class="hero is-primary">
       <Footer/>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -27,7 +36,12 @@ body {
   min-height: 100vh;
 }
 #app {
-  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-contents {
+  flex: 1;
 }
 .footer {
   margin-top: auto;
