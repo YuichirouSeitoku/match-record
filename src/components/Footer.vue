@@ -1,6 +1,6 @@
 <template>
-    <div class="columns">
-        <div class="column">
+    <div class="columns is-mobile">
+        <div class="column is-6">
             <RouterLink to ='/'>
                 <img src="../assets/next_card.png">
                 <p>次の札</p>
