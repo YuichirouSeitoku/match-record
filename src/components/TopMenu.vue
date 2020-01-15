@@ -4,7 +4,7 @@
             <p>Top画面</p>
 		</div>
         <div @click="CountCardIndex" class="box">
-			<RouterLink to ='/SelectCardTop'>
+			<RouterLink to ='/InputData/0'>
 				<p>次の札を入力する</p>
 			</RouterLink>
 		</div>
@@ -53,10 +53,7 @@ export default {
     this.card_name = this.$store.state.all_card
     this.which_take = this.$store.state.take_card
     this.otetsuki = this.$store.state.otetsuki_user
-    console.log('iを表示します')
-    console.log(this.i)
     for (; this.i < this.$store.state.card_index_count; this.i++) {
-      console.log('for文のなか')
       this.addTableData(this.i)
     }
   },
@@ -73,7 +70,6 @@ export default {
       this.$store.dispatch('updateCardIndex')
     },
     addTableData: function (num) {
-      console.log('addTableDataのなかだよ')
       this.table_data.push({
         index: num + 1,
         card_name: this.$store.state.all_card[num],

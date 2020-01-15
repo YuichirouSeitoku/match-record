@@ -16,4 +16,39 @@ Topページの「次の札を入力する」から札やおてつきの有無�
 これらの入力が終わるとTopページに戻り、今まで入力した札の情報表に入力されます。
 また下の分析ボタンを押すと、自分がとった札の中で守った札と攻めた札の割合が表示されるようになっています。
 
-#### 使用したVueのバージョン: 2.9.6
+## 実行方法
+
+```
+npm run dev
+```
+
+## 環境構築
+
+#### nodebrewのセットアップ
+ 
+```
+$ curl -L git.io/nodebrew | perl - setup
+$ echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bash_profile
+$ source ~/.bash_profile
+```
+
+#### npmのインストール
+
+```
+$ nodebrew install v12.13.1
+```
+
+#### git clone
+
+```
+$ git@github.com:YuichirouSeitoku/MatchRecord.git
+$ cd MatchRecord
+```
+
+#### Vueの環境構築
+
+```
+$ npm -g install vue-cli
+$ npm install --save webpack-cli
+$ npm install --save webpack-dev-server
+```
