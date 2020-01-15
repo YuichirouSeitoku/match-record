@@ -24,7 +24,7 @@ const state = {
     [
       {next_id: 7, name: 'い'},
       {next_id: 8, name: 'ち'},
-      {next_id: 22, name: 'ひ'},
+      {next_id: 9, name: 'ひ'},
       {next_id: 10, name: 'き'}
     ],
     [
