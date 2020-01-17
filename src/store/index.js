@@ -175,28 +175,6 @@ const state = {
       {next_id: 22, name: 'あさぼらけあ'},
       {next_id: 22, name: 'あさぼらけう'},
       {next_id: 22, name: 'あさじ'}
-    ],
-    [
-      {next_id: 23, name: '出札'},
-      {next_id: 25, name: '空札'}
-    ],
-    [
-      {next_id: 24, name: '自分'},
-      {next_id: 25, name: '相手'}
-    ],
-    [
-      {next_id: 25, name: '攻めて取った'},
-      {next_id: 25, name: '守って取った'}
-    ],
-    [
-      {next_id: 26, name: 'お手つきがあった'},
-      {next_id: 27, name: 'なし'}
-    ],
-    [
-      {next_id: 27, name: '自分1枚'},
-      {next_id: 27, name: '自分2枚'},
-      {next_id: 27, name: '相手1枚'},
-      {next_id: 27, name: '相手2枚'}
     ]
   ]
 }
