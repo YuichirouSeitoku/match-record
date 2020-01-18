@@ -10,6 +10,7 @@ const state = {
   otetsuki_user: [],
   player_offense_count: 0,
   player_defense_count: 0,
+  card_difference_list: [0],
   card_list: [
     [
       {next_id: 5, name: '一字決まり'},
@@ -197,6 +198,9 @@ const mutations = {
   },
   setPlayerDefenseCount (state) {
     state.player_defense_count = state.player_defense_count + 1
+  },
+  setCardDifferenceList (state, payload) {
+    state.card_difference_list = payload.card_difference_list
   }
 }
 
@@ -218,6 +222,9 @@ const actions = {
   },
   updatePlayerDefenseCount ({ commit }) {
     commit('setPlayerDefenseCount')
+  },
+  updateCardDifferenceList ({ commit }, payload) {
+    commit('setCardDifferenceList', payload)
   }
 }
 
