@@ -42,10 +42,12 @@ export default {
       ],
       card_name: [],
       which_take: [],
-      otetetsuki: []
+      otetetsuki: [],
+      card_difference: []
     }
   },
   mounted () {
+    this.card_difference = this.$store.state.card_difference_list
     this.card_indexes = this.$store.state.card_index_count
     this.card_name = this.$store.state.all_card
     this.which_take = this.$store.state.take_card
@@ -60,7 +62,8 @@ export default {
     ...mapState(['take_card']),
     ...mapState(['otetsuki_user']),
     ...mapState(['player_offense_count']),
-    ...mapState(['player_defense_count'])
+    ...mapState(['player_defense_count']),
+    ...mapState(['card_difference_list'])
   },
   methods: {
     CountCardIndex () {
