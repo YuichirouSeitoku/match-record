@@ -7,7 +7,7 @@
                 </div>
             </RouterLink>
         </div>
-        <div class="column is-6" @click=setEmptyCard >
+        <div class="column is-6" @click=updateVuexValues >
             <RouterLink to = '/QuestionExistOtetsuki'>
                 <div class="box">
                     <p>空札？</p>
@@ -17,10 +17,26 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'QuestionExistCard',
+  data () {
+    return {
+      difference_list: [],
+      push_value: ''
+    }
+  },
+  mounted () {
+    this.difference_list = this.$store.state.card_difference_list
+  },
+  computed: {
+    ...mapState(['card_difference_list'])
+  },
   methods: {
-    setEmptyCard () {
+    updateVuexValues () {
+      this.push_value = this.difference_list[this.difference_list.length - 1]
+      this.difference_list.push(this.push_value)
+      this.$store.dispatch('updateCardDifferenceList', {card_difference_list: this.difference_list})
       this.$store.dispatch('updateTakeCard', {take_card: '空札'})
     }
   }
