@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import InputData from '@/components/InputData'
 import TopMenu from '@/components/TopMenu'
-import SelectCardTop from '../components/SelectCard/SelectCardTop'
-import SelectOneCharacter from '../components/SelectCard/SelectOneCharacter'
+import ShowChart from '@/components/ShowChart'
 import QuestionExistCard from '../components/Question/QuestionExistCard'
 import QuestionWhichTake from '../components/Question/QuestionWhichTake'
 import QuestionOffenseOrDefense from '../components/Question/QuestionOffenseOrDefense'
@@ -19,14 +19,14 @@ export default new Router({
       component: TopMenu
     },
     {
-      path: '/SelectCardTop',
-      name: 'SeletcCardTop',
-      component: SelectCardTop
+      path: '/InputData/:id',
+      name: 'InputData',
+      component: InputData
     },
     {
-      path: '/SelectOneCharacter',
-      name: 'SelectOneCharacter',
-      component: SelectOneCharacter
+      path: '/ShowChart',
+      name: 'ShowChart',
+      component: ShowChart
     },
     {
       path: '/QuestionExistCard',
