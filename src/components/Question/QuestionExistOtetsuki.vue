@@ -14,7 +14,7 @@
 
             <div class="column">
                 <div @click="updateOtetsukiUser('なし')">
-                    <RouterLink to = '/'>
+                    <RouterLink to = '/TopMenu'>
                         <div class="box">
                             <p>いいえ</p>
                         </div>
