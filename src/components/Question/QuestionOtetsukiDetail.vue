@@ -5,28 +5,28 @@
         </div>
         <div class="columns">
             <div class="column" @click="updateVuexValues('自分',-2)">
-                <RouterLink to ='/'>
+                <RouterLink to ='/TopMenu'>
                     <div class="box">
                         <p>自分 1枚</p>
                     </div>
                 </RouterLink>
             </div>
             <div class="column" @click="updateVuexValues('自分ダブ',-3)">
-                <RouterLink to = '/'>
+                <RouterLink to = '/TopMenu'>
                     <div class="box">
                         <p>自分 ダブ</p>
                     </div>
                 </RouterLink>
             </div>
             <div class="column" @click="updateVuexValues('相手',+2)">
-                <RouterLink to = '/'>
+                <RouterLink to = '/TopMenu'>
                     <div class="box">
                         <p>相手 1枚</p>
                     </div>
                 </RouterLink>
             </div>
             <div class="column" @click="updateVuexValues('相手ダブ',+3)">
-                <RouterLink to = '/'>
+                <RouterLink to = '/TopMenu'>
                     <div class="box">
                         <p>相手 ダブ</p>
                     </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="columns is-mobile">
         <div class="column is-6">
-            <RouterLink to ='/'>
+            <RouterLink to ='/TopMenu'>
               <img src="../assets/next_card.png">
             </RouterLink>
         </div>
