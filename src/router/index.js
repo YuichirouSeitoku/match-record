@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import SignIn from '@/components/SignIn'
+import SignUp from '@/components/SignUp'
 import InputData from '@/components/InputData'
 import TopMenu from '@/components/TopMenu'
 import ShowChart from '@/components/ShowChart'
@@ -15,6 +17,16 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'SignIn',
+      component: SignIn
+    },
+    {
+      path: '/SignUp',
+      name: 'SignUp',
+      component: SignUp
+    },
+    {
+      path: '/TopMenu',
       name: 'TopMenu',
       component: TopMenu
     },
