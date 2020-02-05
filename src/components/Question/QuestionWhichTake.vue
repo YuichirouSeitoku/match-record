@@ -1,20 +1,20 @@
 <template>
     <div>
         <div>
-            <p>とったのは？</p>
+            <p class="has-text-weight-medium has-text-centered">とったのは？</p>
         </div>
         <div class="columns">
             <div @click="updateVuexValues('自分',1)" class="column">
                 <RouterLink to ='/QuestionOffenseOrDefense'>
                     <div class="box">
-                        <p>自分</p>
+                        <p class="has-text-weight-medium has-text-centered">自分</p>
                     </div>
                 </RouterLink>
             </div>
             <div @click="updateVuexValues('相手',-1)" class="column">
                 <RouterLink to = '/QuestionExistOtetsuki'>
                     <div class="box">
-                        <p>相手</p>
+                        <p class="has-text-weight-medium has-text-centered">相手</p>
                     </div>
                 </RouterLink>
             </div>

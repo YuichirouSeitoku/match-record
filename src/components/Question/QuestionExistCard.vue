@@ -3,14 +3,14 @@
         <div class="column is-6">
             <RouterLink to ='/QuestionWhichTake'>
                 <div class="box">
-                    <p>出札？</p>
+                    <p class="has-text-weight-medium has-text-centered">出札</p>
                 </div>
             </RouterLink>
         </div>
         <div class="column is-6" @click=updateVuexValues >
             <RouterLink to = '/QuestionExistOtetsuki'>
                 <div class="box">
-                    <p>空札？</p>
+                    <p class="has-text-weight-medium has-text-centered">空札</p>
                 </div>
             </RouterLink>
         </div>

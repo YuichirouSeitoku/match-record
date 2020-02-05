@@ -3,7 +3,7 @@
         <div @click="countPlayerOffense" class="column">
             <RouterLink to ='/QuestionExistOtetsuki'>
                 <div class="box">
-                    <p>攻めてとった？</p>
+                    <p class="has-text-weight-medium has-text-centered">攻めてとった？</p>
                 </div>
             </RouterLink>
         </div>
@@ -11,7 +11,7 @@
         <div @click="countPlayerDefense" class="column">
             <RouterLink to = '/QuestionExistOtetsuki'>
                 <div class="box">
-                    <p>守ってとった？</p>
+                    <p class="has-text-weight-medium has-text-centered">守ってとった？</p>
                 </div>
             </RouterLink>
         </div>
