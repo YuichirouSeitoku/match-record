@@ -39,6 +39,7 @@ $ source ~/.bash_profile
 
 ```
 $ nodebrew install v12.13.1
+$ nodebrew use v12.13.1
 ```
 
 #### git clone
