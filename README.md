@@ -39,12 +39,13 @@ $ source ~/.bash_profile
 
 ```
 $ nodebrew install v12.13.1
+$ nodebrew use v12.13.1
 ```
 
 #### git clone
 
 ```
-$ git@github.com:YuichirouSeitoku/MatchRecord.git
+$ git clone https://github.com/YuichirouSeitoku/MatchRecord.git
 $ cd MatchRecord
 ```
 
