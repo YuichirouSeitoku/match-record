@@ -10,6 +10,8 @@ import QuestionWhichTake from '../components/Question/QuestionWhichTake'
 import QuestionOffenseOrDefense from '../components/Question/QuestionOffenseOrDefense'
 import QuestionExistOtetsuki from '../components/Question/QuestionExistOtetsuki'
 import QuestionOtetsukiDetail from '../components/Question/QuestionOtetsukiDetail'
+import ConfirmFinishMatch from '../components/Result/ConfirmFinishMatch'
+import ResultMatch from '../components/Result/ResultMatch'
 
 Vue.use(Router)
 
@@ -64,6 +66,16 @@ export default new Router({
       path: '/QuestionOtetsukiDetail',
       name: 'QuestionOtetsukiDetail',
       component: QuestionOtetsukiDetail
+    },
+    {
+      path: '/ConfirmFinishMatch',
+      name: 'ConfirmFinishMatch',
+      component: ConfirmFinishMatch
+    },
+    {
+      path: '/ResultMatch',
+      name: 'ResultMatch',
+      component: ResultMatch
     }
   ]
 })

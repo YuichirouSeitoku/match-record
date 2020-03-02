@@ -8,6 +8,11 @@
         <div class="box">
             <b-table :data="table_data" :columns="table_columns" :mobile-cards="false"></b-table>
         </div>
+        <RouterLink to = '/ConfirmFinishMatch'>
+            <div class="box">
+                <p class="has-text-weight-medium has-text-centered">試合終了</p>
+            </div>
+        </RouterLink>
 	</div>
 </template>
 
