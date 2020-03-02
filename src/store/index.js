@@ -8,9 +8,12 @@ const state = {
   card_index_count: 0,
   take_card: [],
   otetsuki_user: [],
-  card_difference: [0],
   player_offense_count: 0,
   player_defense_count: 0,
+  player_otetsuki_count: 0,
+  player_dabu_count: 0,
+  opponent_otetsuki_count: 0,
+  opponent_dabu_count: 0,
   card_difference_list: [0],
   card_list: [
     [
@@ -194,9 +197,6 @@ const mutations = {
   setOtetsukiUser (state, payload) {
     state.otetsuki_user.push(payload.otetsuki_user)
   },
-  setCardDifference (state, payload) {
-    state.card_difference.push(payload.card_difference)
-  },
   setTakeFlagTrue (state) {
     state.take_flag = true
   },
@@ -208,6 +208,18 @@ const mutations = {
   },
   setPlayerDefenseCount (state) {
     state.player_defense_count = state.player_defense_count + 1
+  },
+  setPlayerOtetsukiCount (state) {
+    state.player_otetsuki_count = state.player_otetsuki_count + 1
+  },
+  setPlayerDabuCount (state) {
+    state.player_dabu_count = state.player_dabu_count + 1
+  },
+  setOpponentOtetsukiCount (state) {
+    state.opponent_otetsuki_count = state.opponent_otetsuki_count + 1
+  },
+  setOpponentDabuCount (state) {
+    state.opponent_dabu_count = state.opponent_dabu_count + 1
   },
   setCardDifferenceList (state, payload) {
     state.card_difference_list = payload.card_difference_list
@@ -227,9 +239,6 @@ const actions = {
   updateOtetsukiUser ({ commit }, payload) {
     commit('setOtetsukiUser', payload)
   },
-  updateCardDifference ({ commit }, payload) {
-    commit('setCardDifference', payload)
-  },
   updateTakeFlagTrue ({ commit }) {
     commit('setTakeFlagTrue')
   },
@@ -241,6 +250,18 @@ const actions = {
   },
   updatePlayerDefenseCount ({ commit }) {
     commit('setPlayerDefenseCount')
+  },
+  updatePlayerOtetsukiCount ({ commit }) {
+    commit('setPlayerOtetsukiCount')
+  },
+  updatePlayerDabuCount ({ commit }) {
+    commit('setPlayerDabuCount')
+  },
+  updateOpponentOtetsukiCount ({ commit }) {
+    commit('setOpponentOtetsukiCount')
+  },
+  updateOpponentDabuCount ({ commit }) {
+    commit('setOpponentDabuCount')
   },
   updateCardDifferenceList ({ commit }, payload) {
     commit('setCardDifferenceList', payload)

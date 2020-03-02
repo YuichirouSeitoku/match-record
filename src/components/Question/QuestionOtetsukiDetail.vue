@@ -4,28 +4,28 @@
             <p class="has-text-weight-medium has-text-centered">誰がお手つきをしたか</p>
         </div>
         <div class="columns">
-            <div class="column" @click="updateVuexValues('自分',-2)">
+            <div class="column" @click="updateVuexValues('自分',-2);countPlayerOtetsuki()">
                 <RouterLink to ='/TopMenu'>
                     <div class="box">
                         <p class="has-text-weight-medium has-text-centered">自分 1枚</p>
                     </div>
                 </RouterLink>
             </div>
-            <div class="column" @click="updateVuexValues('自分ダブ',-3)">
+            <div class="column" @click="updateVuexValues('自分ダブ',-3);countPlayerDabu()">
                 <RouterLink to = '/TopMenu'>
                     <div class="box">
                         <p class="has-text-weight-medium has-text-centered">自分 ダブ</p>
                     </div>
                 </RouterLink>
             </div>
-            <div class="column" @click="updateVuexValues('相手',+2)">
+            <div class="column" @click="updateVuexValues('相手',+2);countOpponentOtetsuki()">
                 <RouterLink to = '/TopMenu'>
                     <div class="box">
                         <p class="has-text-weight-medium has-text-centered">相手 1枚</p>
                     </div>
                 </RouterLink>
             </div>
-            <div class="column" @click="updateVuexValues('相手ダブ',+3)">
+            <div class="column" @click="updateVuexValues('相手ダブ',+3);countOpponentDabu()">
                 <RouterLink to = '/TopMenu'>
                     <div class="box">
                         <p class="has-text-weight-medium has-text-centered">相手 ダブ</p>
@@ -57,8 +57,19 @@ export default {
     updateVuexValues (val1, val2) {
       this.$store.dispatch('updateOtetsukiUser', {otetsuki_user: val1})
       this.difference_list.push(this.pop_value + val2)
-      console.log(this.difference_list)
       this.$store.dispatch('updateCardDifferenceList', {card_difference_list: this.difference_list})
+    },
+    countPlayerOtetsuki () {
+      this.$store.dispatch('updatePlayerOtetsukiCount')
+    },
+    countPlayerDabu () {
+      this.$store.dispatch('updatePlayerDabuCount')
+    },
+    countOpponentOtetsuki () {
+      this.$store.dispatch('updateOpponentOtetsukiCount')
+    },
+    countOpponentDabu () {
+      this.$store.dispatch('updateOpponentDabuCount')
     }
   }
 }
