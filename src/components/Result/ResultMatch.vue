@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="box">
-            <p class="is-size-1 has-text-weight-medium has-text-centered">
+            <p class="is-size-3 has-text-weight-medium has-text-centered">
                 <span class="under">
                     試合結果
                 </span>
@@ -9,42 +9,42 @@
             <br>
             <div class="columns is-mobile">
                 <div class="column is-6">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">勝敗:</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">勝敗:</p>
                 </div>
                 <div class ="column">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">{{ abs_difference  }}枚差で{{ which_win }}</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ abs_difference  }}枚差で{{ which_win }}</p>
                 </div>
             </div>
             <div class="columns is-mobile">
                 <div class="column is-6">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">自分のお手つき:</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">自分のお手つき:</p>
                 </div>
                 <div class ="column">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">{{ player_otetsuki  }}回</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ player_otetsuki  }}回</p>
                 </div>
             </div>
             <div class="columns is-mobile">
                 <div class="column is-6">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">自分のダブ:</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">自分のダブ:</p>
                 </div>
                 <div class ="column">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">{{ player_dabu  }}回</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ player_dabu  }}回</p>
                 </div>
             </div>
             <div class="columns is-mobile">
                 <div class="column is-6">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">相手のお手つき:</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">相手のお手つき:</p>
                 </div>
                 <div class ="column">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">{{ opponent_otetsuki  }}回</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ opponent_otetsuki  }}回</p>
                 </div>
             </div>
             <div class="columns is-mobile">
                 <div class="column is-6">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">相手のダブ:</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">相手のダブ:</p>
                 </div>
                 <div class ="column">
-                    <p class="is-size-4 has-text-weight-medium has-text-left">{{ opponent_dabu  }}回</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ opponent_dabu  }}回</p>
                 </div>
             </div>
         </div>
@@ -112,6 +112,6 @@ export default {
 </script>
 <style scopoed>
 .under {
-  border-bottom: solid 10px #ff99ab;
+  border-bottom: solid 7px #ff99ab;
 }
 </style>
