@@ -16,8 +16,6 @@ export default {
     return {
       user: '',
       user_email: '',
-      card_indexes: '',
-      i: 0,
       table_data: [],
       table_columns: [
         {
@@ -37,18 +35,12 @@ export default {
           label: '枚差'
         }
       ],
-      card_name: [],
-      which_take: [],
-      otetetsuki: [],
-      card_difference: []
+      date: '',
+      index_of_year: '',
+      index_of_date: ''
     }
   },
   mounted () {
-    this.card_difference = this.$store.state.card_difference_list
-    this.card_indexes = this.$store.state.card_index_count
-    this.card_name = this.$store.state.all_card
-    this.which_take = this.$store.state.take_card
-    this.otetsuki = this.$store.state.otetsuki_user
     this.ReadFirestore()
   },
   methods: {
@@ -56,12 +48,11 @@ export default {
       this.user = firebase.auth().currentUser
       if (this.user != null) {
         this.user_email = this.user.email
-        console.log('this.user_email')
-        console.log(this.user_email)
         db.collection(this.user_email).get().then(querySnapshot => {
           querySnapshot.forEach(doc => {
+            this.CutOutDate(doc.id)
             this.table_data.push({
-              date: doc.id,
+              date: this.date,
               opponent_name: doc.data().opponent_name,
               which_win: doc.data().which_win,
               abs_difference: doc.data().abs_difference
@@ -70,8 +61,11 @@ export default {
         })
       }
     },
-    CountCardIndex () {
-      this.$store.dispatch('updateCardIndex')
+    CutOutDate (doc_date) {
+      this.index_of_year = doc_date.indexOf('年')
+      this.index_of_date = doc_date.indexOf('日')
+      this.date = doc_date.slice(this.index_of_year+1, this.index_of_date+1)
+      console.log(this.date)
     }
   }
 }
