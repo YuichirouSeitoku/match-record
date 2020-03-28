@@ -179,7 +179,9 @@ export default {
           player_dabu_count: this.player_dabu_count_data,
           opponent_otetsuki_count: this.opponent_otetsuki_count_data,
           opponent_dabu_count: this.opponent_dabu_count_data,
-          card_difference_list: this.card_difference_list_data
+          card_difference_list: this.card_difference_list_data,
+          abs_difference: this.abs_difference,
+          which_win: this.which_win
         }).then(function () {
           console.log('success')
         }).catch(function (error) {
