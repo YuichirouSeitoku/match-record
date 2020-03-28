@@ -5,6 +5,7 @@ import SignUp from '@/components/SignUp'
 import InputData from '@/components/InputData'
 import TopMenu from '@/components/TopMenu'
 import ShowChart from '@/components/ShowChart'
+import TopDatabase from '@/components/TopDatabase'
 import QuestionExistCard from '../components/Question/QuestionExistCard'
 import QuestionWhichTake from '../components/Question/QuestionWhichTake'
 import QuestionOffenseOrDefense from '../components/Question/QuestionOffenseOrDefense'
@@ -41,6 +42,11 @@ export default new Router({
       path: '/ShowChart',
       name: 'ShowChart',
       component: ShowChart
+    },
+    {
+      path: '/TopDatabase',
+      name: 'TopDatabase',
+      component: TopDatabase
     },
     {
       path: '/QuestionExistCard',
