@@ -12,6 +12,7 @@ import QuestionOffenseOrDefense from '../components/Question/QuestionOffenseOrDe
 import QuestionExistOtetsuki from '../components/Question/QuestionExistOtetsuki'
 import QuestionOtetsukiDetail from '../components/Question/QuestionOtetsukiDetail'
 import ConfirmFinishMatch from '../components/Result/ConfirmFinishMatch'
+import InputOpponentName from '../components/Result/InputOpponentName'
 import ResultMatch from '../components/Result/ResultMatch'
 
 Vue.use(Router)
@@ -77,6 +78,11 @@ export default new Router({
       path: '/ConfirmFinishMatch',
       name: 'ConfirmFinishMatch',
       component: ConfirmFinishMatch
+    },
+    {
+      path: '/InputOpponentName',
+      name: 'InputOpponentName',
+      component: InputOpponentName
     },
     {
       path: '/ResultMatch',

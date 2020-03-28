@@ -14,6 +14,7 @@ const state = {
   player_dabu_count: 0,
   opponent_otetsuki_count: 0,
   opponent_dabu_count: 0,
+  opponent_name: '',
   card_difference_list: [0],
   card_list: [
     [
@@ -221,6 +222,9 @@ const mutations = {
   setOpponentDabuCount (state) {
     state.opponent_dabu_count = state.opponent_dabu_count + 1
   },
+  setOpponentName (state, payload) {
+    state.opponent_name = payload.opponent_name
+  },
   setCardDifferenceList (state, payload) {
     state.card_difference_list = payload.card_difference_list
   }
@@ -262,6 +266,9 @@ const actions = {
   },
   updateOpponentDabuCount ({ commit }) {
     commit('setOpponentDabuCount')
+  },
+  updateOpponentName ({ commit }, payload) {
+    commit('setOpponentName', payload)
   },
   updateCardDifferenceList ({ commit }, payload) {
     commit('setCardDifferenceList', payload)

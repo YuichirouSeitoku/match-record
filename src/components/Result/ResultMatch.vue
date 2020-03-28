@@ -47,14 +47,6 @@
                     <p class="is-size-5 has-text-weight-medium has-text-left">{{ opponent_dabu }}回</p>
                 </div>
             </div>
-            <div class="columns is-mobile">
-                <div class="column is-6">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">テスト:</p>
-                </div>
-                <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ test }}回</p>
-                </div>
-            </div>
         </div>
         <div class="box" @click="saveContact">
             <p class="has-text-weight-medium has-text-centered">保存する</p>
@@ -83,7 +75,6 @@ export default {
       opponent_otetsuki: '',
       player_dabu: '',
       opponent_dabu: '',
-      test: 'test',
       user: '',
       user_name: '',
       user_email: '',
@@ -102,6 +93,7 @@ export default {
       player_dabu_count_data: '',
       opponent_otetsuki_count_data: '',
       opponent_dabu_count_data: '',
+      opponent_name_data: '',
       card_difference_list_data: ''
     }
   },
@@ -127,6 +119,7 @@ export default {
     this.player_dabu_count_data = this.$store.state.player_dabu_count
     this.opponent_otetsuki_count_data = this.$store.state.opponent_otetsuki_count
     this.opponent_dabu_count_data = this.$store.state.opponent_dabu_count
+    this.opponent_name_data = this.$store.state.opponent_name
     this.card_difference_list_data = this.$store.state.card_difference_list
   },
   computed: {
@@ -135,6 +128,7 @@ export default {
     ...mapState(['opponent_otetsuki_count']),
     ...mapState(['player_dabu_count']),
     ...mapState(['opponent_dabu_count']),
+    ...mapState(['opponent_name']),
     ...mapState(['all_card']),
     ...mapState(['take_card']),
     ...mapState(['otetsuki_user']),
@@ -179,6 +173,7 @@ export default {
           player_dabu_count: this.player_dabu_count_data,
           opponent_otetsuki_count: this.opponent_otetsuki_count_data,
           opponent_dabu_count: this.opponent_dabu_count_data,
+          opponent_name: this.opponent_name_data,
           card_difference_list: this.card_difference_list_data,
           abs_difference: this.abs_difference,
           which_win: this.which_win
