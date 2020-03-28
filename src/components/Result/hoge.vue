@@ -44,15 +44,7 @@
                     <p class="is-size-5 has-text-weight-medium has-text-left">相手のダブ:</p>
                 </div>
                 <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ opponent_dabu }}回</p>
-                </div>
-            </div>
-            <div class="columns is-mobile">
-                <div class="column is-6">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">テスト:</p>
-                </div>
-                <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ test }}回</p>
+                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ opponent_dabu  }}回</p>
                 </div>
             </div>
         </div>
@@ -71,7 +63,6 @@
 import { mapState } from 'vuex'
 import db from '../../firestore.js'
 import firebase from 'firebase'
-
 export default {
   name: 'TopMenu',
   data () {
@@ -93,16 +84,7 @@ export default {
       hour: '',
       min: '',
       current_time: '',
-      all_card_data: '',
-      take_card_data: '',
-      otetsuki_user_data: '',
-      player_offense_count_data: '',
-      player_defense_count_data: '',
-      player_otetsuki_count_data: '',
-      player_dabu_count_data: '',
-      opponent_otetsuki_count_data: '',
-      opponent_dabu_count_data: '',
-      card_difference_list_data: ''
+      all_card: 'all_card'
     }
   },
   mounted () {
@@ -118,28 +100,14 @@ export default {
       this.which_win = '負け'
     }
     this.abs_difference = Math.abs(this.final_card_difference)
-    this.all_card_data = this.$store.state.all_card
-    this.take_card_data = this.$store.state.take_card
-    this.otetsuki_user_data = this.$store.state.otetsuki_user
-    this.player_offense_count_data = this.$store.state.player_offense_count
-    this.player_defense_count_data = this.$store.state.player_defense_count
-    this.player_otetsuki_count_data = this.$store.state.player_otetsuki_count
-    this.player_dabu_count_data = this.$store.state.player_dabu_count
-    this.opponent_otetsuki_count_data = this.$store.state.opponent_otetsuki_count
-    this.opponent_dabu_count_data = this.$store.state.opponent_dabu_count
-    this.card_difference_list_data = this.$store.state.card_difference_list
+    this.all_card = this.$store.state.all_card
   },
   computed: {
     ...mapState(['card_difference_list']),
     ...mapState(['player_otetsuki_count']),
     ...mapState(['opponent_otetsuki_count']),
     ...mapState(['player_dabu_count']),
-    ...mapState(['opponent_dabu_count']),
-    ...mapState(['all_card']),
-    ...mapState(['take_card']),
-    ...mapState(['otetsuki_user']),
-    ...mapState(['player_offense_count']),
-    ...mapState(['player_defense_count'])
+    ...mapState(['opponent_dabu_count'])
   },
   methods: {
     CountCardIndex () {
@@ -170,16 +138,7 @@ export default {
         this.user_email = this.user.email
         this.getCurrentTime()
         db.collection(this.user_email).doc(this.current_time).set({
-          all_card: this.all_card_data,
-          take_card: this.take_card_data,
-          otetsuki_user: this.otetsuki_user_data,
-          player_defense_count: this.player_defense_count_data,
-          player_otetsuki_count: this.player_otetsuki_count_data,
-          player_offense_count: this.player_offense_count_data,
-          player_dabu_count: this.player_dabu_count_data,
-          opponent_otetsuki_count: this.opponent_otetsuki_count_data,
-          opponent_dabu_count: this.opponent_dabu_count_data,
-          card_difference_list: this.card_difference_list_data
+          all_card: this.all_card
         }).then(function () {
           console.log('success')
         }).catch(function (error) {
