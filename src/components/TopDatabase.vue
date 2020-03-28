@@ -25,6 +25,10 @@ export default {
           label: '日付'
         },
         {
+          field: 'opponent_name',
+          label: '対戦相手'
+        },
+        {
           field: 'which_win',
           label: '勝敗'
         },
@@ -58,6 +62,7 @@ export default {
           querySnapshot.forEach(doc => {
             this.table_data.push({
               date: doc.id,
+              opponent_name: doc.data().opponent_name,
               which_win: doc.data().which_win,
               abs_difference: doc.data().abs_difference
             })

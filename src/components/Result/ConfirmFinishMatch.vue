@@ -5,7 +5,7 @@
         </div>
         <div class="columns">
             <div class="column">
-                <RouterLink to ='/ResultMatch'>
+                <RouterLink to ='/InputOpponentName'>
                     <div class="box">
                         <p class="has-text-weight-medium has-text-centered">はい</p>
                     </div>
