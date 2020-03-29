@@ -180,9 +180,9 @@ export default {
           abs_difference: this.abs_difference,
           which_win: this.which_win
         }).then(function () {
-          console.log('success')
+          alert('success')
         }).catch(function (error) {
-          console.error('Error adding document: ', error)
+          alert('Error:' + error)
         })
       } else {
         alert('お試し版ではこの機能はご利用になれません。')
