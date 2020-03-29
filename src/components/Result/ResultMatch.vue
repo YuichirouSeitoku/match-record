@@ -106,6 +106,8 @@ export default {
 
     if (Math.sign(this.final_card_difference)) {
       this.which_win = '勝ち'
+    } else if (Math.sign(this.final_card_difference) === 0) {
+      this.which_win = '引き分け'
     } else {
       this.which_win = '負け'
     }
