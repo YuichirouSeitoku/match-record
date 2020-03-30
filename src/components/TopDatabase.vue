@@ -65,7 +65,6 @@ export default {
       this.index_of_year = docDate.indexOf('年')
       this.index_of_date = docDate.indexOf('日')
       this.date = docDate.slice(this.index_of_year + 1, this.index_of_date + 1)
-      console.log(this.date)
     }
   }
 }

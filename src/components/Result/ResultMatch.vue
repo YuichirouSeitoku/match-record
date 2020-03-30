@@ -151,7 +151,6 @@ export default {
     },
     getCurrentTime () {
       this.now = new Date()
-      console.log(this.now)
       this.year = this.now.getFullYear()
       this.month = this.now.getMonth() + 1
       this.date = this.now.getDate()
@@ -162,6 +161,8 @@ export default {
     },
     saveContact () {
       this.user = firebase.auth().currentUser
+      console.log('this.user')
+      console.log(this.user.email)
       if (this.user != null) {
         this.user_email = this.user.email
         this.getCurrentTime()
@@ -178,7 +179,8 @@ export default {
           opponent_name: this.opponent_name_data,
           card_difference_list: this.card_difference_list_data,
           abs_difference: this.abs_difference,
-          which_win: this.which_win
+          which_win: this.which_win,
+          email: this.user.email
         }).then(function () {
           alert('success')
         }).catch(function (error) {
