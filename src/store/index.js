@@ -185,6 +185,10 @@ const state = {
   ]
 }
 
+const getters = {
+  otetsuki_user (state) { return state.otetsuki_user }
+}
+
 const mutations = {
   setCurrentCard (state, payload) {
     state.all_card.push(payload.current_card)
@@ -279,6 +283,7 @@ const store = new Vuex.Store({
   state: state,
   mutations: mutations,
   actions: actions,
+  getters: getters,
   namespaced: true
 })
 
