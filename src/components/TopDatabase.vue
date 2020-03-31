@@ -9,7 +9,6 @@
 <script>
 import db from '../firestore.js'
 import firebase from 'firebase'
-
 export default {
   name: 'TopDatabse',
   data () {
