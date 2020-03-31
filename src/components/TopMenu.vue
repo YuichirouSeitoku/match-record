@@ -47,19 +47,25 @@ export default {
       ],
       card_name: [],
       which_take: [],
-      otetetsuki: [],
-      card_difference: []
+      otetsuki: [],
+      card_difference: [],
+      table_data_boolean: true
     }
   },
   mounted () {
+    this.$store.watch(
+      (state, getters) => getters.otetsuki_user,
+      (newValue, oldValue) => {
+        this.otetsuki = this.$store.state.otetsuki_user
+        this.addTableData()
+        this.table_data_boolean = false
+      }
+    )
     this.card_difference = this.$store.state.card_difference_list
     this.card_indexes = this.$store.state.card_index_count
     this.card_name = this.$store.state.all_card
     this.which_take = this.$store.state.take_card
-    this.otetsuki = this.$store.state.otetsuki_user
-    for (; this.i < this.$store.state.card_index_count; this.i++) {
-      this.addTableData(this.i)
-    }
+    this.addTableData()
   },
   computed: {
     ...mapState(['all_card']),
@@ -74,13 +80,19 @@ export default {
     CountCardIndex () {
       this.$store.dispatch('updateCardIndex')
     },
-    addTableData: function (num) {
-      this.table_data.push({
-        index: num + 1,
-        card_name: this.$store.state.all_card[num],
-        otetsuki: this.$store.state.otetsuki_user[num],
-        which_take: this.$store.state.take_card[num]
-      })
+    addTableData: function () {
+      this.i = 0
+      this.table_data = []
+      if (this.table_data_boolean) {
+        for (; this.i < this.$store.state.card_index_count; this.i++) {
+          this.table_data.push({
+            index: this.i + 1,
+            card_name: this.$store.state.all_card[this.i],
+            otetsuki: this.$store.state.otetsuki_user[this.i],
+            which_take: this.$store.state.take_card[this.i]
+          })
+        }
+      }
     }
   }
 }
