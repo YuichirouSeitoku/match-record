@@ -193,8 +193,8 @@ const mutations = {
   setCurrentCard (state, payload) {
     state.all_card.push(payload.current_card)
   },
-  countCardIndex (state) {
-    state.card_index_count = state.card_index_count + 1
+  setCardIndex (state, payload) {
+    state.card_index_count = payload.card_index + 1
   },
   setTakeCard (state, payload) {
     state.take_card.push(payload.take_card)
@@ -238,8 +238,8 @@ const actions = {
   updateCurrentCard ({ commit }, payload) {
     commit('setCurrentCard', payload)
   },
-  updateCardIndex ({ commit }) {
-    commit('countCardIndex')
+  updateCardIndex ({ commit }, payload) {
+    commit('setCardIndex', payload)
   },
   updateTakeCard ({ commit }, payload) {
     commit('setTakeCard', payload)
