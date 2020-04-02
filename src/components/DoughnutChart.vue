@@ -5,7 +5,6 @@ export default {
   extends: Doughnut,
   data () {
     return {
-      card_indexes: [],
       table_list: [],
       offense_and_defense: [],
       i: 0

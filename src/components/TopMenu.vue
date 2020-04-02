@@ -1,10 +1,10 @@
 <template>
 	<div>
-        <div @click="CountCardIndex" class="box">
-			<RouterLink to ='/InputData/0'>
-				<p class="has-text-weight-medium has-text-centered">次の札を入力する</p>
-			</RouterLink>
-		</div>
+        <div class="box">
+            <RouterLink to ='/InputData/0'>
+                <p class="has-text-weight-medium has-text-centered">次の札を入力する</p>
+            </RouterLink>
+        </div>
         <div class="box">
             <b-table :data="table_data" :columns="table_columns" :mobile-cards="false"></b-table>
         </div>
@@ -22,7 +22,6 @@ export default {
   name: 'TopMenu',
   data () {
     return {
-      card_indexes: '',
       i: 0,
       table_data: [],
       table_columns: [
@@ -62,14 +61,12 @@ export default {
       }
     )
     this.card_difference = this.$store.state.card_difference_list
-    this.card_indexes = this.$store.state.card_index_count
     this.card_name = this.$store.state.all_card
     this.which_take = this.$store.state.take_card
     this.addTableData()
   },
   computed: {
     ...mapState(['all_card']),
-    ...mapState(['card_index_count']),
     ...mapState(['take_card']),
     ...mapState(['otetsuki_user']),
     ...mapState(['player_offense_count']),
@@ -77,19 +74,16 @@ export default {
     ...mapState(['card_difference_list'])
   },
   methods: {
-    CountCardIndex () {
-      this.$store.dispatch('updateCardIndex')
-    },
-    addTableData: function () {
+    addTableData () {
       this.i = 0
       this.table_data = []
       if (this.table_data_boolean) {
-        for (; this.i < this.$store.state.card_index_count; this.i++) {
+        for (; this.i < this.which_take.length; this.i++) {
           this.table_data.push({
             index: this.i + 1,
-            card_name: this.$store.state.all_card[this.i],
-            otetsuki: this.$store.state.otetsuki_user[this.i],
-            which_take: this.$store.state.take_card[this.i]
+            card_name: this.all_card[this.i],
+            otetsuki: this.otetsuki_user[this.i],
+            which_take: this.which_take[this.i]
           })
         }
       }
