@@ -1,61 +1,34 @@
-# Match Record
+# match-record
 
-### 競技かるたの試合の分析ができるWebサイト
-
-競技かるたにおいて自分の得意な札がなんであるか、序盤は強いが終盤に弱い等の特徴が何かを確かめるために試合のデータをとって分析することはかなり重要なステップになります。従来は紙に記録をとって分析していたものをこのWebサービスを使えばスマホ一つで簡単にデータがとれるといったものになります。またそれに加えて自分がどの割合で攻守を行っているかも円グラフで確認できるようになっています。
-
-### URL(heroku ver)
-https://matchrecord.herokuapp.com/
-
-### URL(Netlify ver)
-https://match-record.netlify.com/
-
-### 使い方
-Topページの「次の札を入力する」から札やおてつきの有無などの情報を入力します。入力する情報としては以下の5点になっています。
-
-* なんの札が詠まれたか
-* 出札か空札か
-* どちらがとったか
-* 攻めてとったか守ってとったか
-* おてつきの有無
-
-これらの入力が終わるとTopページに戻り、今まで入力した札の情報表に入力されます。
-また下の分析ボタンを押すと、自分がとった札の中で守った札と攻めた札の割合が表示されるようになっています。
-
-## 実行方法
-
+## Project setup
 ```
-npm run dev
+npm install
 ```
 
-## 環境構築
-
-#### nodebrewのセットアップ
- 
+### Compiles and hot-reloads for development
 ```
-$ curl -L git.io/nodebrew | perl - setup
-$ echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bash_profile
-$ source ~/.bash_profile
+npm run serve
 ```
 
-#### nodeのインストール
-
+### Compiles and minifies for production
 ```
-$ nodebrew install v12.13.1
-$ nodebrew use v12.13.1
+npm run build
 ```
 
-#### git clone
-
+### Run your tests
 ```
-$ git clone https://github.com/YuichirouSeitoku/MatchRecord.git
-$ cd MatchRecord
+npm run test
 ```
 
-#### Vueの環境構築
+### Lints and fixes files
+```
+npm run lint
+```
 
+### Run your unit tests
 ```
-$ npm -g install vue-cli
-$ npm install --save webpack-cli
-$ npm install --save webpack-dev-server
+npm run test:unit
 ```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

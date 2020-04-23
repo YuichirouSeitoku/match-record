@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import SignIn from '@/components/SignIn'
 import SignUp from '@/components/SignUp'
 import InputData from '@/components/InputData'
@@ -15,10 +15,9 @@ import ConfirmFinishMatch from '../components/Result/ConfirmFinishMatch'
 import InputOpponentName from '../components/Result/InputOpponentName'
 import ResultMatch from '../components/Result/ResultMatch'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
+const routes = [
     {
       path: '/',
       name: 'SignIn',
@@ -89,5 +88,12 @@ export default new Router({
       name: 'ResultMatch',
       component: ResultMatch
     }
-  ]
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
+
+export default router
