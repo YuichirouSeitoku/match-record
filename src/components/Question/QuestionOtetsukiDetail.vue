@@ -1,36 +1,44 @@
 <template>
     <div>
         <div>
-            <p class="has-text-weight-medium has-text-centered">誰がお手つきをしたか</p>
+            <p class="text-center text--secondary font-weight-light">誰がお手つきをしたか</p>
         </div>
         <div class="columns">
-            <div class="column" @click="updateVuexValues('自分',-2);countPlayerOtetsuki()">
-                <RouterLink to ='/TopMenu'>
-                    <div class="box">
-                        <p class="has-text-weight-medium has-text-centered">自分 1枚</p>
-                    </div>
-                </RouterLink>
+            <div @click="updateVuexValues('自分',-2);countPlayerOtetsuki()">
+                <v-card
+                     class="my-3 pt-3 elevation-1"
+                     outlined
+                     to="/BaseMenu"
+                >
+                    <p class="text-center text--secondary font-weight-light">自分 1枚</p>
+                </v-card>
             </div>
-            <div class="column" @click="updateVuexValues('自分ダブ',-3);countPlayerDabu()">
-                <RouterLink to = '/TopMenu'>
-                    <div class="box">
-                        <p class="has-text-weight-medium has-text-centered">自分 ダブ</p>
-                    </div>
-                </RouterLink>
+            <div @click="updateVuexValues('自分ダブ',-3);countPlayerDabu()">
+                <v-card
+                    class="my-3 pt-3 elevation-1"
+                    outlined
+                    to="/BaseMenu"
+                >
+                        <p class="text-center text--secondary font-weight-light">自分 ダブ</p>
+                </v-card>
             </div>
-            <div class="column" @click="updateVuexValues('相手',+2);countOpponentOtetsuki()">
-                <RouterLink to = '/TopMenu'>
-                    <div class="box">
-                        <p class="has-text-weight-medium has-text-centered">相手 1枚</p>
-                    </div>
-                </RouterLink>
+            <div @click="updateVuexValues('相手',+2);countOpponentOtetsuki()">
+                <v-card
+                    class="my-3 pt-3 elevation-1"
+                    outlined
+                    to="/BaseMenu"
+                >
+                    <p class="text-center text--secondary font-weight-light">相手 1枚</p>
+                </v-card>
             </div>
-            <div class="column" @click="updateVuexValues('相手ダブ',+3);countOpponentDabu()">
-                <RouterLink to = '/TopMenu'>
-                    <div class="box">
-                        <p class="has-text-weight-medium has-text-centered">相手 ダブ</p>
-                    </div>
-                </RouterLink>
+            <div @click="updateVuexValues('相手ダブ',+3);countOpponentDabu()">
+                <v-card
+                    class="my-3 pt-3 elevation-1"
+                    outlined
+                    to="/BaseMenu"
+                >
+                    <p class="text-center text--secondary font-weight-light">相手 ダブ</p>
+                </v-card>
             </div>
         </div>
     </div>

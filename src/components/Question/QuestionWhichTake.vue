@@ -1,22 +1,26 @@
 <template>
     <div>
         <div>
-            <p class="has-text-weight-medium has-text-centered">とったのは？</p>
+            <p class="text-center text--secondary font-weight-light">とったのは？</p>
         </div>
-        <div class="columns">
-            <div @click="updateVuexValues('自分',1)" class="column">
-                <RouterLink to ='/QuestionOffenseOrDefense'>
-                    <div class="box">
-                        <p class="has-text-weight-medium has-text-centered">自分</p>
-                    </div>
-                </RouterLink>
+        <div>
+            <div @click="updateVuexValues('自分',1)">
+                <v-card
+                    class="my-3 pt-3 elevation-1"
+                    outlined
+                    to="/QuestionOffenseOrDefense"
+                >
+                    <p class="text-center text--secondary font-weight-light">自分</p>
+                </v-card>
             </div>
-            <div @click="updateVuexValues('相手',-1)" class="column">
-                <RouterLink to = '/QuestionExistOtetsuki'>
-                    <div class="box">
-                        <p class="has-text-weight-medium has-text-centered">相手</p>
-                    </div>
-                </RouterLink>
+            <div @click="updateVuexValues('相手',-1)">
+                <v-card 
+                    class="my-3 pt-3 elevation-1"
+                    outlined
+                    to="/QuestionExistOtetsuki"
+                >
+                    <p class="text-center text--secondary font-weight-light">相手</p>
+                </v-card>
             </div>
         </div>
     </div>

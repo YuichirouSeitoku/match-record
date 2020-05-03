@@ -1,19 +1,22 @@
 <template>
-    <div class="columns is-mobile">
-        <div class="column is-4">
-            <RouterLink to ='/TopMenu'>
-              <img src="../assets/next_card.png">
-            </RouterLink>
-        </div>
-        <div class="column" is-4>
-            <RouterLink to ='/ShowChart'>
-              <img src="../assets/show_chart.png">
-            </RouterLink>
-        </div>
-        <div class="column" is-4>
-            <RouterLink to ='/TopDatabase'>
-              <img src="../assets/show_database.png">
-            </RouterLink>
-        </div>
-    </div>
+  <v-bottom-navigation
+    :value="activeBtn"
+    grow
+    color="teal"
+  >
+    <v-btn to="/BaseMenu">
+      <span>Next</span>
+      <v-icon>mdi-feather</v-icon>
+    </v-btn>
+
+    <v-btn to="/ShowChart">
+      <span>Analysis</span>
+      <v-icon>mdi-chart-line</v-icon>
+    </v-btn>
+
+    <v-btn to="/BaseDatabase">
+      <span>Database</span>
+      <v-icon>mdi-database</v-icon>
+    </v-btn>
+  </v-bottom-navigation>
 </template>

@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import SignIn from '@/components/SignIn'
-import SignUp from '@/components/SignUp'
+import SignIn from '@/views/SignIn'
+import SignUp from '@/views/SignUp'
 import InputData from '@/components/InputData'
-import TopMenu from '@/components/TopMenu'
-import ShowChart from '@/components/ShowChart'
-import TopDatabase from '@/components/TopDatabase'
+import BaseMenu from '@/views/BaseMenu'
+import ShowChart from '@/views/ShowChart'
+import BaseDatabase from '@/views/BaseDatabase'
 import QuestionExistCard from '../components/Question/QuestionExistCard'
 import QuestionWhichTake from '../components/Question/QuestionWhichTake'
 import QuestionOffenseOrDefense from '../components/Question/QuestionOffenseOrDefense'
@@ -29,9 +29,9 @@ const routes = [
       component: SignUp
     },
     {
-      path: '/TopMenu',
-      name: 'TopMenu',
-      component: TopMenu
+      path: '/BaseMenu',
+      name: 'BaseMenu',
+      component: BaseMenu
     },
     {
       path: '/InputData/:id',
@@ -44,9 +44,9 @@ const routes = [
       component: ShowChart
     },
     {
-      path: '/TopDatabase',
-      name: 'TopDatabase',
-      component: TopDatabase
+      path: '/BaseDatabase',
+      name: 'BaseDatabase',
+      component: BaseDatabase
     },
     {
       path: '/QuestionExistCard',

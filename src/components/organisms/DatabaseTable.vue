@@ -1,37 +1,48 @@
 <template>
-	<div>
-        <div class="box">
-            <b-table :data="table_data" :columns="table_columns" :mobile-cards="false"></b-table>
-        </div>
-	</div>
+    <v-card
+      class="mx-auto"
+      max-width="600"
+      outlined
+    >
+        <BTable :table_data='table_data' :table_title='table_title' :header_data='header_data'></BTable>
+    </v-card>
 </template>
-
 <script>
-import db from '../firestore.js'
+import db from '../../firestore.js'
 import firebase from 'firebase'
+import BTable from '../atoms/BTable'
 export default {
-  name: 'TopDatabse',
+  name: 'DatabaseTable',
+  components: {
+    BTable
+  },
   data () {
     return {
       user: '',
       user_email: '',
       table_data: [],
-      table_columns: [
+      table_title: '戦績',
+      header_data: [
         {
-          field: 'date',
-          label: '日付'
+          text: '日付',
+          align: 'start',
+          sortable: false,
+          value: 'date'
         },
         {
-          field: 'opponent_name',
-          label: '対戦相手'
+          text: '対戦相手',
+          sortable: false,
+          value: 'opponent_name'
         },
         {
-          field: 'which_win',
-          label: '勝敗'
+          text: '勝敗',
+          sortable: false,
+          value: 'which_win'
         },
         {
-          field: 'abs_difference',
-          label: '枚差'
+          text: '枚差',
+          sortable: false,
+          value: 'abs_difference'
         }
       ],
       date: '',
