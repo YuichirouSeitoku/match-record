@@ -1,25 +1,26 @@
 <template>
     <div>
         <div>
-            <p class="has-text-weight-medium has-text-centered">自分 or 相手がお手つきをした？</p>
+            <p class="text-center text--secondary font-weight-light">自分 or 相手がお手つきをした？</p>
         </div>
-        <div class="columns">
-            <div class="column">
-                <RouterLink to ='/QuestionOtetsukiDetail'>
-                    <div class="box">
-                        <p class="has-text-weight-medium has-text-centered">はい</p>
-                    </div>
-                </RouterLink>
+        <div>
+            <div>
+                <v-card
+                    class="my-3 pt-3 elevation-1"
+                    outlined
+                    to="/QuestionOtetsukiDetail"
+                >
+                    <p class="text-center text--secondary font-weight-light">はい</p>
+                </v-card>
             </div>
-
-            <div class="column">
-                <div @click="updateOtetsukiUser('なし')">
-                    <RouterLink to = '/TopMenu'>
-                        <div class="box">
-                            <p class="has-text-weight-medium has-text-centered">いいえ</p>
-                        </div>
-                    </RouterLink>
-                </div>
+            <div @click="updateOtetsukiUser('なし')">
+                <v-card
+                    class="my-3 pt-3 elevation-1"
+                    outlined
+                    to="/BaseMenu"
+                >
+                        <p class="text-center text--secondary font-weight-light">いいえ</p>
+                </v-card>
             </div>
         </div>
     </div>

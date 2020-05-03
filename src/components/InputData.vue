@@ -22,7 +22,7 @@ export default {
     ...mapState(['card_list'])
   },
   watch: {
-    '$route' (to, from) {
+    '$route' (to) {
       this.runMethods(to.params.id)
     }
   },

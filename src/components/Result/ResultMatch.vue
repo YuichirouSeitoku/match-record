@@ -1,62 +1,75 @@
 <template>
-    <div>
-        <div class="box">
-            <p class="is-size-3 has-text-weight-medium has-text-centered">
-                <span class="under">
-                    試合結果
-                </span>
-            </p>
-            <br>
-            <div class="columns is-mobile">
-                <div class="column is-6">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">勝敗:</p>
-                </div>
-                <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ abs_difference  }}枚差で{{ which_win }}</p>
-                </div>
-            </div>
-            <div class="columns is-mobile">
-                <div class="column is-6">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">自分のお手つき:</p>
-                </div>
-                <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ player_otetsuki  }}回</p>
-                </div>
-            </div>
-            <div class="columns is-mobile">
-                <div class="column is-6">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">自分のダブ:</p>
-                </div>
-                <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ player_dabu  }}回</p>
-                </div>
-            </div>
-            <div class="columns is-mobile">
-                <div class="column is-6">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">相手のお手つき:</p>
-                </div>
-                <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ opponent_otetsuki  }}回</p>
-                </div>
-            </div>
-            <div class="columns is-mobile">
-                <div class="column is-6">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">相手のダブ:</p>
-                </div>
-                <div class ="column">
-                    <p class="is-size-5 has-text-weight-medium has-text-left">{{ opponent_dabu }}回</p>
-                </div>
-            </div>
-        </div>
-        <div class="box" @click="saveContact">
-            <p class="has-text-weight-medium has-text-centered">保存する</p>
-        </div>
-        <RouterLink to = '/TopMenu'>
-            <div class="box">
-                <p class="has-text-weight-medium has-text-centered">TOPに戻る</p>
-            </div>
-        </RouterLink>
-    </div>
+  <div>
+    <v-card
+      class="my-3 pt-3 elevation-1"
+      outlined
+    >
+      <v-row justify="center">
+        <p class="display-1 font-weight-bold">
+          <span class="under">
+            試合結果
+          </span>
+        </p>
+      </v-row>
+      <br>
+      <v-container>
+        <v-row>
+          <v-col>
+            <p class="title">勝敗:</p>
+          </v-col>
+          <v-col>
+            <p class="title">{{ abs_difference  }}枚差で{{ which_win }}</p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p class="title">自分のお手つき:</p>
+          </v-col>
+          <v-col>
+            <p class="title">{{ player_otetsuki  }}回</p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p class="title">自分のダブ:</p>
+          </v-col>
+          <v-col>
+            <p class="title">{{ player_dabu  }}回</p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p class="title">相手のお手つき:</p>
+          </v-col>
+          <v-col>
+            <p class="title">{{ opponent_otetsuki  }}回</p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p class="title">相手のダブ:</p>
+          </v-col>
+          <v-col>
+            <p class="title">{{ opponent_dabu }}回</p>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card>
+    <v-card
+      class="my-3 pt-3 elevation-1"
+      outlined
+      @click="saveContact"
+    >
+      <p class="text-center text--secondary font-weight-light">保存する</p>
+    </v-card>
+    <v-card
+      class="my-3 pt-3 elevation-1"
+      outlined
+      to="/BaseMenu"
+    >
+      <p class="text-center text--secondary font-weight-light">TOPに戻る</p>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -65,7 +78,7 @@ import db from '../../firestore.js'
 import firebase from 'firebase'
 
 export default {
-  name: 'TopMenu',
+  name: 'BaseMenu',
   data () {
     return {
       final_card_difference: '',

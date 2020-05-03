@@ -1,18 +1,22 @@
 <template>
-    <div class="columns">
-        <div class="column is-6">
-            <RouterLink to ='/QuestionWhichTake'>
-                <div class="box">
-                    <p class="has-text-weight-medium has-text-centered">出札</p>
-                </div>
-            </RouterLink>
+    <div>
+        <div>
+            <v-card 
+                class="my-3 pt-3 elevation-1"
+                outlined
+                to="/QuestionWhichTake"
+            >
+                <p class="text-center text--secondary font-weight-light">出札</p>
+            </v-card>
         </div>
-        <div class="column is-6" @click=updateVuexValues >
-            <RouterLink to = '/QuestionExistOtetsuki'>
-                <div class="box">
-                    <p class="has-text-weight-medium has-text-centered">空札</p>
-                </div>
-            </RouterLink>
+        <div @click="updateVuexValues()">
+            <v-card
+                class="my-3 pt-3 elevation-1"
+                outlined
+                to="/QuestionExistOtetsuki"
+            >
+            <p class="text-center text--secondary font-weight-light">空札</p>
+            </v-card>
         </div>
     </div>
 </template>

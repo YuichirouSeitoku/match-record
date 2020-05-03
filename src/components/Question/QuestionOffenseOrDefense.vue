@@ -1,19 +1,23 @@
 <template>
-    <div class="columns">
-        <div @click="countPlayerOffense" class="column">
-            <RouterLink to ='/QuestionExistOtetsuki'>
-                <div class="box">
-                    <p class="has-text-weight-medium has-text-centered">攻めてとった？</p>
-                </div>
-            </RouterLink>
+    <div>
+        <div @click="countPlayerOffense">
+            <v-card
+                class="my-3 pt-3 elevation-1"
+                outlined
+                to="/QuestionExistOtetsuki"
+            >
+                <p class="text-center text--secondary font-weight-light">攻めてとった？</p>
+            </v-card>
         </div>
 
-        <div @click="countPlayerDefense" class="column">
-            <RouterLink to = '/QuestionExistOtetsuki'>
-                <div class="box">
-                    <p class="has-text-weight-medium has-text-centered">守ってとった？</p>
-                </div>
-            </RouterLink>
+        <div @click="countPlayerDefense">
+            <v-card
+                class="my-3 pt-3 elevation-1"
+                outlined
+                to="/QuestionExistOtetsuki"
+            >
+                <p class="text-center text--secondary font-weight-light">守ってとった？</p>
+            </v-card>
         </div>
 
     </div>

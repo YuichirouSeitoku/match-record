@@ -1,10 +1,11 @@
 <template>
-    <div class="columns">
-        <div class="column">
-            <div class="box" v-on:click="emitParent">
-                <p class="has-text-weight-medium has-text-centered">{{ card }}</p>
-            </div>
-        </div>
+    <div v-on:click="emitParent">
+        <v-card
+            class="my-3 pt-3 elevation-1"
+            outlined
+        >
+            <p class="text-center text--secondary font-weight-light">{{ card }}</p>
+        </v-card>
     </div>
 </template>
 
