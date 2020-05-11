@@ -19,9 +19,3 @@
     </v-row>
   </v-container>
 </template>
-export default {
-  name: 'BFloatButton'
-  components: {
-    BFloatButton
-  }
-}
