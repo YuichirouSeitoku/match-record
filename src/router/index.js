@@ -6,11 +6,11 @@ import InputData from '@/components/InputData'
 import BaseMenu from '@/views/BaseMenu'
 import ShowChart from '@/views/ShowChart'
 import BaseDatabase from '@/views/BaseDatabase'
-import QuestionExistCard from '../components/Question/QuestionExistCard'
-import QuestionWhichTake from '../components/Question/QuestionWhichTake'
-import QuestionOffenseOrDefense from '../components/Question/QuestionOffenseOrDefense'
-import QuestionExistOtetsuki from '../components/Question/QuestionExistOtetsuki'
-import QuestionOtetsukiDetail from '../components/Question/QuestionOtetsukiDetail'
+import BaseQuestionExistCard from '@/views/Question/BaseQuestionExistCard'
+import BaseQuestionWhichTake from '@/views/Question/BaseQuestionWhichTake'
+import BaseQuestionWhereTake from '@/views/Question/BaseQuestionWhereTake'
+import BaseQuestionExistOtetsuki from '@/views/Question/BaseQuestionExistOtetsuki'
+import BaseQuestionOtetsukiDetail from '@/views/Question/BaseQuestionOtetsukiDetail'
 import ConfirmFinishMatch from '../components/Result/ConfirmFinishMatch'
 import InputOpponentName from '../components/Result/InputOpponentName'
 import ResultMatch from '../components/Result/ResultMatch'
@@ -49,29 +49,29 @@ const routes = [
       component: BaseDatabase
     },
     {
-      path: '/QuestionExistCard',
-      name: 'QuestionExistCard',
-      component: QuestionExistCard
+      path: '/BaseQuestionExistCard',
+      name: 'BaseQuestionExistCard',
+      component: BaseQuestionExistCard
     },
     {
-      path: '/QuestionWhichTake',
-      name: 'QuestionWhichTake',
-      component: QuestionWhichTake
+      path: '/BaseQuestionWhichTake',
+      name: 'BaseQuestionWhichTake',
+      component: BaseQuestionWhichTake
     },
     {
-      path: '/QuestionOffenseOrDefense',
-      name: 'QuestionOffenseOrDefense',
-      component: QuestionOffenseOrDefense
+      path: '/BaseQuestionWhereTake',
+      name: 'BaseQuestionWhereTake',
+      component: BaseQuestionWhereTake
     },
     {
-      path: '/QuestionExistOtetsuki',
-      name: 'QuestionExistOtetsuki',
-      component: QuestionExistOtetsuki
+      path: '/BaseQuestionExistOtetsuki',
+      name: 'BaseQuestionExistOtetsuki',
+      component: BaseQuestionExistOtetsuki
     },
     {
-      path: '/QuestionOtetsukiDetail',
-      name: 'QuestionOtetsukiDetail',
-      component: QuestionOtetsukiDetail
+      path: '/BaseQuestionOtetsukiDetail',
+      name: 'BaseQuestionOtetsukiDetail',
+      component: BaseQuestionOtetsukiDetail
     },
     {
       path: '/ConfirmFinishMatch',

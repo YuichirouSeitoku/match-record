@@ -30,7 +30,7 @@ export default {
     runMethods (id, name) {
       if (id === 22) {
         this.$store.dispatch('updateCurrentCard', { current_card: name })
-        this.$router.push({name: 'QuestionExistCard'})
+        this.$router.push({name: 'BaseQuestionExistCard'})
       } else {
         this.$router.push({name: 'InputData', params: { id }})
       }
