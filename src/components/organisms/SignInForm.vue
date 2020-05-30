@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <b-email-form @fromBEmailForm="updateEmail"/>
+    <b-simple-form :formLabel=emailLabel @fromBSimpleForm="updateEmail"/>
     <b-password-form @fromBPasswordForm="updatePassword"/>
 
     <v-row justify="center">
@@ -27,13 +27,13 @@
 
 <script>
 import firebase from 'firebase'
-import BEmailForm from '@/components/atoms/BEmailForm'
+import BSimpleForm from '@/components/atoms/BSimpleForm'
 import BPasswordForm from '@/components/atoms/BPasswordForm'
 import BButton from '@/components/atoms/BButton'
 export default {
   name: 'SignInForm',
   components: {
-    BEmailForm,
+    BSimpleForm,
     BPasswordForm,
     BButton
   },
@@ -41,6 +41,7 @@ export default {
     return {
       email: '',
       password: '',
+      emailLabel: 'email',
       buttonName: 'ログイン'
     }
   },
