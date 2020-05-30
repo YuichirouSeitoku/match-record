@@ -7,7 +7,7 @@
               class="my-3 pt-3 mx-auto elevation-1"
               outlined
               max-width="600"
-              to='/ConfirmFinishMatch'
+              to='/BaseConfirmFinishMatch'
             >
                 <p class="text-center text-secondary font-weight-light">試合終了</p>
             </v-card>

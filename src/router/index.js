@@ -11,9 +11,9 @@ import BaseQuestionWhichTake from '@/views/Question/BaseQuestionWhichTake'
 import BaseQuestionWhereTake from '@/views/Question/BaseQuestionWhereTake'
 import BaseQuestionExistOtetsuki from '@/views/Question/BaseQuestionExistOtetsuki'
 import BaseQuestionOtetsukiDetail from '@/views/Question/BaseQuestionOtetsukiDetail'
-import ConfirmFinishMatch from '../components/Result/ConfirmFinishMatch'
-import InputOpponentName from '../components/Result/InputOpponentName'
-import ResultMatch from '../components/Result/ResultMatch'
+import BaseConfirmFinishMatch from '@/views/Result/BaseConfirmFinishMatch'
+import BaseInputOpponentName from '@/views/Result/BaseInputOpponentName'
+import BaseResultMatch from '@/views/Result/BaseResultMatch'
 
 Vue.use(VueRouter)
 
@@ -74,19 +74,19 @@ const routes = [
       component: BaseQuestionOtetsukiDetail
     },
     {
-      path: '/ConfirmFinishMatch',
-      name: 'ConfirmFinishMatch',
-      component: ConfirmFinishMatch
+      path: '/BaseConfirmFinishMatch',
+      name: 'BaseConfirmFinishMatch',
+      component: BaseConfirmFinishMatch
     },
     {
-      path: '/InputOpponentName',
-      name: 'InputOpponentName',
-      component: InputOpponentName
+      path: '/BaseInputOpponentName',
+      name: 'BaseInputOpponentName',
+      component: BaseInputOpponentName
     },
     {
-      path: '/ResultMatch',
-      name: 'ResultMatch',
-      component: ResultMatch
+      path: '/BaseResultMatch',
+      name: 'BaseResultMatch',
+      component: BaseResultMatch
     }
 ]
 
