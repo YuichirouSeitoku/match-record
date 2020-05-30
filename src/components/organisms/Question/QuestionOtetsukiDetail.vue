@@ -36,7 +36,7 @@ export default {
         },
         {
           cardText: '自分 ダブ',
-          routePath: '/BaseMenu',
+          routerPath: '/BaseMenu',
           callMethod: [
             this.countPlayerDabu,
             this.routeNext
@@ -44,7 +44,7 @@ export default {
         },
         {
           cardText: '相手 1枚',
-          routePath: '/BaseMenu',
+          routerPath: '/BaseMenu',
           callMethod: [
             this.countOpponentOtetsuki,
             this.routeNext
@@ -52,7 +52,7 @@ export default {
         },
         {
           cardText: '相手 2枚',
-          routePath: '/BaseMenu',
+          routerPath: '/BaseMenu',
           callMethod: [
             this.countOpponentDabu,
             this.routeNext
