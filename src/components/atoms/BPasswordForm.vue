@@ -1,17 +1,17 @@
 <template>
-    <v-form>
-        <v-text-field
-          v-model="password"
-          v-on:change="emitEmailAndPassword"
-          :append-icon="is_show ? 'mdi-eye' : 'mdi-eye-off'"
-          :type="is_show ? 'text' : 'password'"
-          label="Password"
-          class="input-group--focused"
-          outlined
-          rounded
-          @click:append="is_show = !is_show"
-        ></v-text-field>
-    </v-form>
+  <v-form>
+    <v-text-field
+      v-model="password"
+      :append-icon="isShow ? 'mdi-eye' : 'mdi-eye-off'"
+      :type="isShow ? 'text' : 'password'"
+      @change="inputPasswordForm"
+      @click:append="isShow = !isShow"
+      label="Password"
+      class="input-group--focused"
+      outlined
+      rounded
+    ></v-text-field>
+  </v-form>
 </template>
 
 <script>
@@ -20,11 +20,11 @@ export default {
   data () {
     return {
       password: '',
-      is_show: 'false'
+      isShow: 'false'
     }
   },
   methods: {
-    emitEmailAndPassword () {
+    inputPasswordForm () {
       this.$emit('fromBPasswordForm', this.password)
     }
   }

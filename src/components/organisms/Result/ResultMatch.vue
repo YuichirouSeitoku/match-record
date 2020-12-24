@@ -1,87 +1,34 @@
 <template>
   <div>
-    <v-card
-      class="my-3 pt-3 elevation-1"
-      outlined
-    >
-      <v-row justify="center">
-        <p class="display-1 font-weight-bold">
-          <span class="under">
-            試合結果
-          </span>
-        </p>
-      </v-row>
-      <br>
-      <v-container>
-        <v-row>
-          <v-col>
-            <p class="title">勝敗:</p>
-          </v-col>
-          <v-col>
-            <p class="title">{{ abs_difference  }}枚差で{{ which_win }}</p>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <p class="title">自分のお手つき:</p>
-          </v-col>
-          <v-col>
-            <p class="title">{{ player_otetsuki  }}回</p>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <p class="title">自分のダブ:</p>
-          </v-col>
-          <v-col>
-            <p class="title">{{ player_dabu  }}回</p>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <p class="title">相手のお手つき:</p>
-          </v-col>
-          <v-col>
-            <p class="title">{{ opponent_otetsuki  }}回</p>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <p class="title">相手のダブ:</p>
-          </v-col>
-          <v-col>
-            <p class="title">{{ opponent_dabu }}回</p>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-card>
-    <v-card
-      class="my-3 pt-3 elevation-1"
-      outlined
-      @click="saveContact"
-    >
-      <p class="text-center text--secondary font-weight-light">保存する</p>
-    </v-card>
-    <v-card
-      class="my-3 pt-3 elevation-1"
-      outlined
-      to="/BaseMenu"
-    >
-      <p class="text-center text--secondary font-weight-light">TOPに戻る</p>
-    </v-card>
+    <b-result-card
+      :card-title=resultCardTitle
+      :card-items=resultCardItems
+    />
+    <b-simple-card
+      v-for="(cardItem, index) in cardItems"
+      :key=index
+      :card-text=cardItem.cardText
+      @fromBSimpleCard=cardItem.callMethod
+    />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import db from '../../firestore.js'
 import firebase from 'firebase'
-
+import db from '@/firestore.js'
+import BSimpleCard from '@/components/molecule/BSimpleCard'
+import BResultCard from '@/components/molecule/BResultCard'
 export default {
   name: 'BaseMenu',
+  components: {
+    BSimpleCard,
+    BResultCard
+  },
   data () {
     return {
       final_card_difference: '',
+      final_card_difference_list: [],
       abs_difference: '',
       which_win: '',
       player_otetsuki: '',
@@ -107,24 +54,27 @@ export default {
       opponent_otetsuki_count_data: '',
       opponent_dabu_count_data: '',
       opponent_name_data: '',
-      card_difference_list_data: ''
+      card_difference_list_data: '',
+      resultCardTitle: '試合結果',
+      resultCardItems:[],
+      cardItems: [
+        {
+          cardText: '保存する',
+          callMethod: this.saveContent
+        },
+        {
+          cardText: 'Topに戻る',
+          callMethod: this.routeTop
+        }
+      ]
     }
   },
-  mounted () {
-    this.final_card_difference = this.$store.state.card_difference_list.pop()
+  created () {
+    this.final_card_difference_list = this.$store.state.card_difference_list
     this.player_otetsuki = this.$store.state.player_otetsuki_count
     this.opponent_otetsuki = this.$store.state.opponent_otetsuki_count
     this.player_dabu = this.$store.state.player_dabu_count
     this.opponent_dabu = this.$store.state.opponent_dabu_count
-
-    if (Math.sign(this.final_card_difference)) {
-      this.which_win = '勝ち'
-    } else if (Math.sign(this.final_card_difference) === 0) {
-      this.which_win = '引き分け'
-    } else {
-      this.which_win = '負け'
-    }
-    this.abs_difference = Math.abs(this.final_card_difference)
     this.all_card_data = this.$store.state.all_card
     this.take_card_data = this.$store.state.take_card
     this.otetsuki_user_data = this.$store.state.otetsuki_user
@@ -172,10 +122,8 @@ export default {
 
       this.current_time = this.year + '年' + this.month + '月' + this.date + '日' + this.hour + '時' + this.min + '分'
     },
-    saveContact () {
+    saveContent () {
       this.user = firebase.auth().currentUser
-      console.log('this.user')
-      console.log(this.user.email)
       if (this.user != null) {
         this.user_email = this.user.email
         this.getCurrentTime()
@@ -202,12 +150,45 @@ export default {
       } else {
         alert('お試し版ではこの機能はご利用になれません。')
       }
+    },
+    routeTop () {
+      this.$router.push("BaseMenu")
+    }
+  },
+  watch: {
+    final_card_difference_list: function () {
+      this.final_card_difference = this.final_card_difference_list[this.final_card_difference_list.length - 1]
+      this.abs_difference = Math.abs(this.final_card_difference)
+      if (Math.sign(this.final_card_difference)) {
+        this.which_win = '勝ち'
+      } else if (Math.sign(this.final_card_difference) === 0) {
+        this.which_win = '引き分け'
+      } else {
+        this.which_win = '負け'
+      }
+      this.resultCardItems.push(
+        {
+          subject: '勝敗:',
+          content: this.abs_difference + '枚差で' + this.which_win
+        },
+        {
+          subject: '自分のお手つき:',
+          content: this.player_otetsuki + '回'
+        },
+        {
+          subject: '自分のタブ:',
+          content: this.player_dabu + '回'
+        },
+        {
+          subject: '相手のお手つき:',
+          content: this.opponent_otetsuki + '回'
+        },
+        {
+          subject: '相手のダブ:',
+          content: this.opponent_dabu + '回'
+        }
+      )
     }
   }
 }
 </script>
-<style scopoed>
-.under {
-  border-bottom: solid 7px #ff99ab;
-}
-</style>
