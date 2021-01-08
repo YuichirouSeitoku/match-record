@@ -7,9 +7,6 @@
 ### URL(heroku ver)
 https://matchrecord.herokuapp.com/
 
-### URL(Netlify ver)
-https://match-record.netlify.com/
-
 ### 使い方
 Topページの「次の札を入力する」から札やおてつきの有無などの情報を入力します。入力する情報としては以下の5点になっています。
 
